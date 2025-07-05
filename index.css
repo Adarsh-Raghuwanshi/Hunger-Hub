@@ -1,0 +1,55 @@
+.shadow-fancy {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.card-shadow{
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.active{
+  @apply text-[#F8263C]
+}
+
+.restaurant-card{
+  @apply rounded-3xl w-[260px] h-80 flex flex-col cursor-pointer transform hover:scale-98 mb-10
+}
+
+.restaurant-details{
+  @apply border border-l-gray-400 border-r-gray-400 border-b-gray-400 border-t-0 flex flex-col gap-1 pl-3 py-3 rounded-bl-3xl rounded-br-3xl
+}
+
+.restaurant-img{
+  @apply  h-[70%] rounded-tl-3xl rounded-tr-3xl
+}
+
+.header-container{
+  @apply flex justify-around h-24 mb-16
+}
+
+.footer-container{
+  @apply h-12 w-full text-center border-t-1 py-3 mt-10
+}
+
+.nav-item{
+  @apply flex justify-around w-[40%] items-center pb-1.5 font-sans font-bold text-[20px] text-gray-700
+}
+
+.search-field{
+  @apply border border-[#907F7F] focus:border-[#f64c5d] focus:outline-none p-1 pl-3 rounded-l-sm
+}
+
+.search-btn{
+  @apply border border-[#353535] p-1 px-3 cursor-pointer rounded-r-sm bg-[#f64c5d] text-white hover:bg-gray-700
+}
+
+.menu-list{
+  @apply border-1 flex justify-center px-8 items-center
+}
+
+@layer components {
+  ul > li {
+    @apply hover:text-[#F8263C] cursor-pointer;
+  }
+}
+
+@import "tailwindcss";
