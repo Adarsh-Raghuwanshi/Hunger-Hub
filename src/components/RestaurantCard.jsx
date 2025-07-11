@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { CLOUD_URL } from "../constants";
+import { useUser } from "../context/User.js";
 
 const RestaurantCard = ({
   id,
@@ -10,8 +11,8 @@ const RestaurantCard = ({
   avgRating,
   deliveryTime,
   distance,
-  costForTwo,
 }) => {
+  const {user} = useUser();
 
   return (
     <Link to={`/restaurant/${name}/${id}`}>
@@ -32,6 +33,8 @@ const RestaurantCard = ({
           </p>
           <p>{cuisines.slice(0, 3).join(", ")}</p>
           <p>{areaName}</p>
+          <p>{user.name}</p>
+          <p>{user.email}</p>
         </div>
       </div>
     </Link>

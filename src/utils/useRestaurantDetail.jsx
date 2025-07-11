@@ -16,7 +16,7 @@ const useRestaurantDetail = (id) => {
       data?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards?.map((item) => {
         const name = item?.card?.info?.name;
         const imgId = item?.card?.info?.imageId;
-        const price = (item?.card?.info?.price) ? item?.card?.info?.price : item?.card?.info?.defaultPrice;
+        const price = (item?.card?.info?.price) ? parseInt(item?.card?.info?.price.toString().replace(/0+$/, '')) : parseInt(item?.card?.info?.defaultPrice.toString().replace(/0+$/, ''));
         return {name, price, imgId};
       });
     

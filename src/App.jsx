@@ -3,7 +3,7 @@ import { createBrowserRouter } from "react-router";
 import { lazy, Suspense } from "react";
 import AppLayout from "./components/AppLayout";
 import ErrorPage from "./components/ErrorPage";
-import Contact from "./components/Contact";
+import Cart from "./components/Cart";
 import Home from "./components/Home";
 import SearchHistory from "./components/SearchHistory";
 import Shimmer from "./components/Shimmer";
@@ -24,8 +24,8 @@ const App = createBrowserRouter([
                 element: <Suspense fallback={<Shimmer/>} ><About/></Suspense> 
             },
             {
-                path: "/contact",
-                element: <Contact/>
+                path: "/cart",
+                element: <Cart/>
             },
             {
                 path: "/search-history",

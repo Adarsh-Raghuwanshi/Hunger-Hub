@@ -19,7 +19,7 @@ const RestaurantDetail = () => {
               {item.name}
             </div>
             <div className="menu-list">
-              &#8377; {item.price.toString().slice(0, 3)}
+              &#8377; {item.price}
             </div>
           </div>
         );

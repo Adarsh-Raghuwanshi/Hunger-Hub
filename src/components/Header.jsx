@@ -32,8 +32,8 @@ const Header = ({restaurants, filterRestaurant}) => {
         <NavLink to="/about">
           <li>About</li>
         </NavLink>
-        <NavLink to="/contact">
-          <li>Contact</li>
+        <NavLink to="/cart">
+          <li>Cart</li>
         </NavLink>
         <NavLink to="instamart">
           <li>Instamart</li>
