@@ -2,10 +2,13 @@ import { NavLink } from "react-router";
 import { IMG_URL } from "../constants";
 import { useState } from "react";
 import useLocalStorage from "../utils/useLocalStorage";
+import { useSelector } from "react-redux";
 
 const Header = ({restaurants, filterRestaurant}) => {
   const [text, setText] = useState("");
   const {addData} = useLocalStorage();
+  const items = useSelector(store => store.cart.items);
+  console.log(items)
 
   function handleSearch(){
     if(text.length > 0 && text.trim() === ""){
@@ -32,14 +35,14 @@ const Header = ({restaurants, filterRestaurant}) => {
         <NavLink to="/about">
           <li>About</li>
         </NavLink>
-        <NavLink to="/cart">
-          <li>Cart</li>
-        </NavLink>
         <NavLink to="instamart">
           <li>Instamart</li>
         </NavLink>
         <NavLink to="search-history">
           <li>Search History</li>
+        </NavLink>
+        <NavLink to="/cart">
+          <li>Cart - {items.length} item</li>
         </NavLink>
       </ul>
 

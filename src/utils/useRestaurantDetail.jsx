@@ -11,13 +11,14 @@ const useRestaurantDetail = (id) => {
   async function getRestDetail() {
     const resp = await fetch(REST_API + id);
     const data = await resp.json();
-
+    console.log(data)
     const detail =
       data?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards?.map((item) => {
         const name = item?.card?.info?.name;
+        const id = item?.card?.info?.id;
         const imgId = item?.card?.info?.imageId;
-        const price = (item?.card?.info?.price) ? parseInt(item?.card?.info?.price.toString().replace(/0+$/, '')) : parseInt(item?.card?.info?.defaultPrice.toString().replace(/0+$/, ''));
-        return {name, price, imgId};
+        const price = (item?.card?.info?.price) ? item?.card?.info?.price / 100 : item?.card?.info?.defaultPrice / 100;
+        return {name, price, imgId, id};
       });
     
     setRestDetail(detail);

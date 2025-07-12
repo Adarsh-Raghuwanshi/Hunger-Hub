@@ -4,6 +4,8 @@ import Footer from "./Footer";
 import Header from "./Header";
 import { useEffect, useState } from "react";
 import { UserProvider } from "../context/User";
+import { Provider } from "react-redux";
+import store from "../store/store";
 
 const AppLayout = () => {
     const restaurants = useCityRestaurants();
@@ -14,6 +16,7 @@ const AppLayout = () => {
     }, [restaurants])
 
     return(
+      <Provider store={store}>
         <UserProvider>
           <Header restaurants={restaurants} filterRestaurant={setFilteredRestaurants} />
           <div className="min-h-auto">
@@ -21,6 +24,7 @@ const AppLayout = () => {
           </div>
           <Footer/>
         </UserProvider>
+      </Provider>
     )
 }
 
